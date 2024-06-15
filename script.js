@@ -74,6 +74,9 @@ $(document).ready(function() {
       url: requestUrl,
       method: 'GET',
       contentType: "application/json",
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+      },
       success: function(tasks) {
         tasks.forEach(task => {
           availableTasks[task.id] = task;
