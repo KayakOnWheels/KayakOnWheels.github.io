@@ -18,7 +18,12 @@ $(document).ready(function() {
       url: requestUrl,
       method: 'GET',
       contentType: 'application/json',
-      success: function(boards) { callback(callbackArgs, boards); }
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+      },
+      success: function(boards) {
+        callback(callbackArgs, boards);
+      }
     });
   }
 
