@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import backgroundImage from '../assets/backgroundImage.svg';
 import githubLogo from '../assets/github-mark.svg';
 import linkedInLogo from '../assets/linkedInLogo.png';
+import cv from '../assets/cv-Gajewski-Grzegorz.pdf';
 import {Button, Image, Modal} from 'react-bootstrap';
 import './home.css';
 import {useState} from "react";
@@ -35,7 +36,10 @@ function Home() {
                     <h6 className="fw-light">Specialized in Java Business Applications</h6>
                 </Col>
                 <Col className="mb-3 d-flex gap-2">
-                    <Button variant="dark" className="border-2 bg-dark-subtle text-black custom-btn" >Resume</Button>
+                    <Button href={cv}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="dark" className="border-2 bg-dark-subtle text-black custom-btn" >Resume</Button>
                     <Button variant="warning" className="border border-black border-2 fw-bold" onClick={handleShow}>Contact</Button>
                 </Col>
                 <Col className="d-flex gap-2">
@@ -50,10 +54,7 @@ function Home() {
             <Modal centered show={show} onHide={handleClose}>
                 <Modal.Body>
                     <Col>
-                        email: test@mail.com
-                    </Col>
-                    <Col>
-                        phone: 123 123 123
+                        Please visit my LinkedIn profile or Resume to obtain contact info.
                     </Col>
                 </Modal.Body>
             </Modal>
